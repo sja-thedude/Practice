@@ -1,5 +1,17 @@
 import './style.css';
 
+// const searchBar = document.getElementsById('name');
+// let names = [];
+// searchBar.addEventListener('keyup', (e) => {
+//   const searchString = e.target.value;
+//   const fullName = names.filter((character) => {
+//     return (
+//       character.firstName.includes(searchString) || character.secondName.includes(searchString)
+//     );
+//   });
+//   itemArr(fullName);
+// });
+
 const getData = async () => {
   const response = await fetch('https://api.hatchways.io/assessment/students/');
   response.json().then((json) => {
