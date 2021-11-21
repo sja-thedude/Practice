@@ -5,10 +5,9 @@ const getData = async () => {
   response.json().then((json) => {
     const itemArr = json.students;
     itemArr.forEach((item) => {
-      // arr = response.data.students[0].grades;
-      // arr = arr.map(elem => parseInt(elem))
-      // avg = arr.reduce((a,b) => a+b) /arr.length
-      // console.log(avg);
+      let grades = item.grades;
+      grades = grades.map(elem => parseInt(elem))
+      let avg = grades.reduce((a,b) => a+b) / grades.length
       const container = document.querySelector('#items');
       const card = document.createElement('div');
       card.innerHTML = `
@@ -20,18 +19,43 @@ const getData = async () => {
       <p class="email">Email: ${item.email}</p>
       <p class="company">Company: ${item.company}</p>
       <p class="skill">Skill: ${item.skill}</p>
-      <p class="grades">Average: ${item.grades} </p>
+      <p class="grades">Average: ${avg}% </p>
       </div>
-      <div class="add"> + </div>
+      <button class="add"> + </button>
+      <div class="marks"><div>
+      <div class="tag">
+      <input type="text" id="tag" name="tag" placeholder="Add a Tag">
+      </div>
       </div>`;
       container.appendChild(card);
     });
 });
 }
 
+// const addGrades = Array.from(document.querySelectorAll('.marks'));
+// addGrades.forEach((card, index) => {
+//   if (index > 1) {
+//     card.classList.add('hide');
+//   }
+// });
+
 // const addBtn = document.getElementsByClassName(".add");
+
+// const addBtnText = (card) => {
+//   if (card.classList.contains('hide')) {
+//     addBtn.innerHTML = '+';
+//   } else {
+//     addBtn.innerHTML = '-';
+//   }
+// };
+
 // addBtn.addEventListener('click', () => {
-  
+//   addGrades.forEach((card, index) => {
+//     if (index > 1) {
+//       card.classList.toggle('hide');
+//       addBtnText(card);
+//     }
+//   });
 // });
 
 getData();
