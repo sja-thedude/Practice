@@ -1,5 +1,6 @@
+/* eslint-disable */
 import './style.css';
-import { studentDetails } from './studentdetails.js';
+import { studentDetails } from './studentdetails';
 
 const getData = () => fetch('https://api.hatchways.io/assessment/students/');
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import tag from './addtag';
 import { data } from './search';
 

@@ -1,5 +1,6 @@
-import { studentDetails } from './studentdetails.js';
-import { getData } from './index.js';
+/* eslint-disable */
+import { studentDetails } from './studentdetails';
+import { getData } from './index';
 
 const data = async (name) => {
   try {
