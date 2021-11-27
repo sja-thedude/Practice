@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/no-cycle */
+/* eslint-disable */
 import tag from './addtag';
 import { data } from './search';
 

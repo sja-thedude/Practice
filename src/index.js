@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/no-cycle */
+/* eslint-disable */
 import './style.css';
 import { studentDetails } from './studentdetails';
 
