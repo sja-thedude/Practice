@@ -1,20 +1,15 @@
-const itemContainer = document.querySelector('.items-container')
-const nameSearch = document.querySelector('.form-name')
+import tag from './addtag';
+import { data } from './search';
 
-
-import tag from './addtag'
-import { data } from "./search.js"
+const itemContainer = document.querySelector('.items-container');
+const nameSearch = document.querySelector('.form-name');
 
 const studentDetails = (list) => {
-    
-    let details = list.map( item => {
-        let average = item.grades.reduce((acc,item) => {
-            return parseInt(item) + acc
-        },0)
-        average = average / item.grades.length
+  let details = list.map((item) => {
+    let average = item.grades.reduce((acc, item) => parseInt(item) + acc, 0);
+    average /= item.grades.length;
 
-        
-       return  `<section class= 'student-card d-flex'><img src=${item.pic} alt="">
+    return `<section class= 'student-card d-flex'><img src=${item.pic} alt="">
        <article class="student-details d-flex f-col">
            <h1 class="name">${item.firstName} ${item.lastName}</h1>
            <ul class="details">
@@ -45,43 +40,42 @@ const studentDetails = (list) => {
    <div class="d-flex f-col icon">
    <i class="fa fa-plus" data-id= 'plus'></i>
    <i class="fa fa-minus" data-id='minus'></i>
-   </div></section>`})
-   
-    details = details.join('')
-    itemContainer.innerHTML = details
-    const studentCard = document.querySelectorAll('.student-card')
+   </div></section>`;
+  });
 
-    studentCard.forEach(card => {
-        card.addEventListener('click', (e) => {
-           const id = e.target.dataset.id
-           if(id) {
-               if (id ==='plus') {
-                   card.classList.add('active')
-               }
-               else {
-                   card.classList.remove('active')
-               }
-           }
-        })
-    })
+  details = details.join('');
+  itemContainer.innerHTML = details;
+  const studentCard = document.querySelectorAll('.student-card');
 
-    const tagInput = document.querySelectorAll('.tag-input')
+  studentCard.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const { id } = e.target.dataset;
+      if (id) {
+        if (id === 'plus') {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      }
+    });
+  });
 
-    tagInput.forEach((input) => {
-        input.addEventListener('change', (e) => {
-            e.preventDefault()
-            const myInput = input.value
-           const cont = e.target.parentElement.previousElementSibling
-           cont.innerHTML += tag(myInput)
-           input.value = ''
-           
-        })
-    })
-}
+  const tagInput = document.querySelectorAll('.tag-input');
+
+  tagInput.forEach((input) => {
+    input.addEventListener('change', (e) => {
+      e.preventDefault();
+      const myInput = input.value;
+      const cont = e.target.parentElement.previousElementSibling;
+      cont.innerHTML += tag(myInput);
+      input.value = '';
+    });
+  });
+};
 
 nameSearch.addEventListener('input', () => {
-    let name = nameSearch.value
-    data(name)
-})
+  const name = nameSearch.value;
+  data(name);
+});
 
-export { studentDetails }
+export { studentDetails };
