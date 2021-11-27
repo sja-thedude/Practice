@@ -1,4 +1,3 @@
+const tag = (tagName) => `<li>${tagName}</li>`;
 
-const tag = (tagName) => `<li>${tagName}</li>`
-
-export default tag
+export default tag;

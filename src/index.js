@@ -1,20 +1,20 @@
 import './style.css';
 import { studentDetails } from './studentdetails.js';
 
-const getData = () => fetch ('https://api.hatchways.io/assessment/students/')
+const getData = () => fetch('https://api.hatchways.io/assessment/students/');
 
-const data = async() => {
+const data = async () => {
   try {
-    let f = await (await getData()).json()
-    f = f.students.slice(0, 15)
-    studentDetails(f)
+    let f = await (await getData()).json();
+    f = f.students.slice(0, 15);
+    studentDetails(f);
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
 
 window.addEventListener('DOMContentLoaded', () => {
-  data()
-})
+  data();
+});
 
-export { getData }
+export { getData };
