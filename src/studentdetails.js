@@ -1,4 +1,3 @@
-/* eslint-disable */
 import tag from './addtag';
 import { data } from './search';
 
@@ -7,7 +6,7 @@ const nameSearch = document.querySelector('.form-name');
 
 const studentDetails = (list) => {
   let details = list.map((item) => {
-    let average = item.grades.reduce((acc, item) => parseInt(item) + acc, 0);
+    let average = item.grades.reduce((acc, item) => parseInt(item , 10) + acc, 0);
     average /= item.grades.length;
 
     return `<section class= 'student-card d-flex'><img src=${item.pic} alt="">
