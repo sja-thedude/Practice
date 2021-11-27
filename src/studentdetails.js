@@ -1,4 +1,5 @@
-/* eslint-disable */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-cycle */
 import tag from './addtag';
 import { data } from './search';
 
@@ -39,8 +40,8 @@ const studentDetails = (list) => {
    </article>
        </article>
    <div class="d-flex f-col icon">
-   <i class="fa fa-plus" data-id= 'plus'></i>
-   <i class="fa fa-minus" data-id='minus'></i>
+   <button type="button" class="fa fa-plus" data-id= 'plus'></button>
+   <button type="button" class="fa fa-minus" data-id= 'minus'></button>
    </div></section>`;
   });
 

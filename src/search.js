@@ -1,4 +1,5 @@
-/* eslint-disable */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-cycle */
 import { studentDetails } from './studentdetails';
 import { getData } from './index';
 
