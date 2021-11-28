@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { studentDetails } from './studentdetails';
 import { getData } from './index';
 
@@ -14,4 +15,5 @@ const data = async (name) => {
   }
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { data };

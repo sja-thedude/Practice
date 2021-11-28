@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import tag from './addtag';
 import { data } from './search';
 
@@ -78,4 +79,5 @@ nameSearch.addEventListener('input', () => {
   data(name);
 });
 
+// eslint-disable-next-line import/prefer-default-export
 export { studentDetails };
