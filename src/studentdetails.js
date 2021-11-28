@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import tag from './addtag';
 import { data } from './search';
 
@@ -6,7 +7,7 @@ const nameSearch = document.querySelector('.form-name');
 
 const studentDetails = (list) => {
   let details = list.map((item) => {
-    let average = item.grades.reduce((acc, item) => parseInt(item) + acc, 0);
+    let average = item.grades.reduce((acc, item) => parseInt(item, 10) + acc, 0);
     average /= item.grades.length;
 
     return `<section class= 'student-card d-flex'><img src=${item.pic} alt="">
@@ -38,8 +39,8 @@ const studentDetails = (list) => {
    </article>
        </article>
    <div class="d-flex f-col icon">
-   <i class="fa fa-plus" data-id= 'plus'></i>
-   <i class="fa fa-minus" data-id='minus'></i>
+   <button type="button" class="fa fa-plus" data-id= 'plus'></button>
+   <button type="button" class="fa fa-minus" data-id= 'minus'></button>
    </div></section>`;
   });
 
@@ -78,4 +79,5 @@ nameSearch.addEventListener('input', () => {
   data(name);
 });
 
+// eslint-disable-next-line import/prefer-default-export
 export { studentDetails };

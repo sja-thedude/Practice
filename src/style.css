@@ -69,7 +69,6 @@ body {
 
 .student-card {
   justify-content: space-around;
-  border-radius: 10px;
   padding: 8px;
   border-top: 1px solid grey;
 }
@@ -78,6 +77,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  border: 1px solid grey;
   align-self: center;
 }
 
@@ -88,7 +88,6 @@ body {
 
 .student-details h1 {
   font-size: 25px;
-
 }
 
 .test-scores {
@@ -117,7 +116,6 @@ body {
   color: black;
 }
 
- 
 .icon i {
   align-self: flex-start;
   margin-top: 50px;
@@ -126,7 +124,7 @@ body {
 }
 
 .tag-input {
-  padding: 8px;
+  padding: 16px;
   text-transform: capitalize;
   outline: none;
   border: none;
@@ -141,12 +139,28 @@ body {
 
 .active .fa-minus {
   display: flex;
+  color: grey;
 }
 
 .active .fa-plus {
   display: none;
+  color: grey;
 }
 
 .active .test-scores {
   display: flex;
+}
+
+button {
+  border-color: rgb(255, 255, 255);
+  color: grey;
+  font-size: xx-large;
+}
+
+.details {
+  padding-left: 20px;
+}
+
+.name {
+  padding-left: 20px;
 }
